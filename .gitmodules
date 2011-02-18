@@ -1,0 +1,3 @@
+[submodule "HostedEngineNetClient"]
+	path = HostedEngineNetClient
+	url = git://github.com/RusticiSoftware/SCORMCloud_NetLibrary.git
