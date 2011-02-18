@@ -1,0 +1,216 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE570ECE-7960-4477-B154-81E98620078C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HostedDemoApp</RootNamespace>
+    <AssemblyName>HostedDemoApp</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxFunctions.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HostedReport.aspx" />
+    <Content Include="images\loadingAnimation.gif" />
+    <Content Include="images\minus.gif" />
+    <Content Include="images\plus.gif" />
+    <Content Include="Learner.aspx" />
+    <Content Include="LearningSent.aspx" />
+    <Content Include="scripts\jquery-1.3.1.min.js" />
+    <Content Include="scripts\thickbox-compressed.js" />
+    <Content Include="SendLearning.aspx" />
+    <Content Include="styles\hosted.css" />
+    <Content Include="styles\thickbox.css" />
+    <Content Include="Closer.html" />
+    <Content Include="UploadLearning.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxFunctions.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AjaxFunctions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxFunctions.aspx.designer.cs">
+      <DependentUpon>AjaxFunctions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\DataStore.cs" />
+    <Compile Include="App_Data\Invitation.cs" />
+    <Compile Include="App_Data\Learning.cs" />
+    <Compile Include="App_Data\Registration.cs" />
+    <Compile Include="App_Data\RegSummaryTable.cs" />
+    <Compile Include="App_Data\Utils.cs" />
+    <Compile Include="App_Data\Emailer.cs" />
+    <Compile Include="CloudCourseList.aspx.cs">
+      <DependentUpon>CloudCourseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CloudCourseList.aspx.designer.cs">
+      <DependentUpon>CloudCourseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Delete.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostedReport.aspx.cs">
+      <DependentUpon>HostedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostedReport.aspx.designer.cs">
+      <DependentUpon>HostedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Launch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Launch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Launch.aspx.designer.cs">
+      <DependentUpon>Launch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Learner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner.aspx.designer.cs">
+      <DependentUpon>Learner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LearningPages.Master.cs">
+      <DependentUpon>LearningPages.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LearningPages.Master.designer.cs">
+      <DependentUpon>LearningPages.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LearningSent.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>LearningSent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LearningSent.aspx.designer.cs">
+      <DependentUpon>LearningSent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Properties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties.aspx.designer.cs">
+      <DependentUpon>Properties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Reporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting.aspx.designer.cs">
+      <DependentUpon>Reporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendLearning.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SendLearning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendLearning.aspx.designer.cs">
+      <DependentUpon>SendLearning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadLearning.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>UploadLearning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadLearning.aspx.designer.cs">
+      <DependentUpon>UploadLearning.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CloudCourseList.aspx" />
+    <Content Include="Delete.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\BG_body.jpg" />
+    <Content Include="images\BG_footer_container.jpg" />
+    <Content Include="images\BG_header.jpg" />
+    <Content Include="images\rustici_logo.jpg" />
+    <Content Include="Launch.aspx" />
+    <Content Include="LearningPages.Master" />
+    <Content Include="Preview.aspx" />
+    <Content Include="Properties.aspx" />
+    <Content Include="Reporting.aspx" />
+    <Content Include="styles\learning.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="HostedEngineNetClient\RusticiSoftware.HostedEngine.Client.csproj">
+      <Project>{11AF12EE-C99E-4A73-8BE2-1FC016867BC0}</Project>
+      <Name>RusticiSoftware.HostedEngine.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4593</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
