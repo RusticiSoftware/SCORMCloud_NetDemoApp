@@ -60,6 +60,7 @@ namespace HostedDemoApp
                 ct.AppendLine("<td><a href='Delete.aspx?courseid=" + cd.CourseId + "'>Delete</a></td>");
                 ct.AppendLine("<td><a href='Preview.aspx?redirect=CloudCourseList.aspx&courseid=" + cd.CourseId + "'>Preview</a></td>");
                 ct.AppendLine("<td><a href='Properties.aspx?courseid=" + cd.CourseId + "'>Properties</a></td>");
+                ct.AppendLine("<td><a href='CourseInvitationsList.aspx?courseid=" + cd.CourseId + "'>Invitations</a></td>");
                 ct.AppendLine("</tr>");
 
 

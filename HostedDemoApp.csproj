@@ -54,11 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjaxFunctions.aspx" />
+    <Content Include="CourseInvitationsList.aspx" />
+    <Content Include="CreateInvitationSample.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HostedReport.aspx" />
     <Content Include="images\loadingAnimation.gif" />
     <Content Include="images\minus.gif" />
     <Content Include="images\plus.gif" />
+    <Content Include="InvitationChange.aspx" />
+    <Content Include="InvitationInfoSample.aspx" />
     <Content Include="Learner.aspx" />
     <Content Include="LearningSent.aspx" />
     <Content Include="scripts\jquery-1.3.1.min.js" />
@@ -68,7 +72,9 @@
     <Content Include="styles\thickbox.css" />
     <Content Include="Closer.html" />
     <Content Include="UploadLearning.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AjaxFunctions.aspx.cs">
@@ -91,6 +97,20 @@
     </Compile>
     <Compile Include="CloudCourseList.aspx.designer.cs">
       <DependentUpon>CloudCourseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseInvitationsList.aspx.cs">
+      <DependentUpon>CourseInvitationsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseInvitationsList.aspx.designer.cs">
+      <DependentUpon>CourseInvitationsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateInvitationSample.aspx.cs">
+      <DependentUpon>CreateInvitationSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateInvitationSample.aspx.designer.cs">
+      <DependentUpon>CreateInvitationSample.aspx</DependentUpon>
     </Compile>
     <Compile Include="Delete.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -115,6 +135,20 @@
     </Compile>
     <Compile Include="HostedReport.aspx.designer.cs">
       <DependentUpon>HostedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvitationChange.aspx.cs">
+      <DependentUpon>InvitationChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvitationChange.aspx.designer.cs">
+      <DependentUpon>InvitationChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvitationInfoSample.aspx.cs">
+      <DependentUpon>InvitationInfoSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvitationInfoSample.aspx.designer.cs">
+      <DependentUpon>InvitationInfoSample.aspx</DependentUpon>
     </Compile>
     <Compile Include="Launch.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>

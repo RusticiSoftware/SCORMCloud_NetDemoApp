@@ -47,7 +47,8 @@ namespace HostedDemoApp
                 new RusticiSoftware.HostedEngine.Client.Configuration(
                         WebConfigurationManager.AppSettings["HostedEngineWebServicesUrl"],
                         WebConfigurationManager.AppSettings["HostedEngineAppId"],
-                        WebConfigurationManager.AppSettings["HostedEngineSecurityKey"]);
+                        WebConfigurationManager.AppSettings["HostedEngineSecurityKey"],
+                        WebConfigurationManager.AppSettings["Origin"]);
         }
 
         protected void Application_End(object sender, EventArgs e)
