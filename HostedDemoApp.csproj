@@ -79,6 +79,20 @@
     <Compile Include="CloudCourseList.aspx.designer.cs">
       <DependentUpon>CloudCourseList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CourseInvitationsList.aspx.cs">
+      <DependentUpon>CourseInvitationsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseInvitationsList.aspx.designer.cs">
+      <DependentUpon>CourseInvitationsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateInvitationSample.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CreateInvitationSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateInvitationSample.aspx.designer.cs">
+      <DependentUpon>CreateInvitationSample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Delete.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Delete.aspx</DependentUpon>
@@ -102,6 +116,20 @@
     </Compile>
     <Compile Include="HostedReport.aspx.designer.cs">
       <DependentUpon>HostedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvitationChange.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>InvitationChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvitationChange.aspx.designer.cs">
+      <DependentUpon>InvitationChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvitationInfoSample.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>InvitationInfoSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvitationInfoSample.aspx.designer.cs">
+      <DependentUpon>InvitationInfoSample.aspx</DependentUpon>
     </Compile>
     <Compile Include="Launch.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -170,12 +198,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudCourseList.aspx" />
+    <Content Include="CourseInvitationsList.aspx" />
+    <Content Include="CreateInvitationSample.aspx" />
     <Content Include="Delete.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="images\BG_body.jpg" />
     <Content Include="images\BG_footer_container.jpg" />
     <Content Include="images\BG_header.jpg" />
     <Content Include="images\rustici_logo.jpg" />
+    <Content Include="InvitationChange.aspx" />
+    <Content Include="InvitationInfoSample.aspx" />
     <Content Include="Launch.aspx" />
     <Content Include="LearningPages.Master" />
     <Content Include="Preview.aspx" />

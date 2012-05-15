@@ -5,7 +5,7 @@
     <div id="listwrapper" runat="server">
         <h2>Cloud Courses</h2>
         
-        <div ID="coursesTableDiv" runat="server"></div>
+        <div id="coursesTableDiv" runat="server"></div>
         
     </div>            
 </asp:Content>

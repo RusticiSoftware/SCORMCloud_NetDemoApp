@@ -1,0 +1,104 @@
+/* Software License Agreement (BSD License)
+ * 
+ * Copyright (c) 2010-2011, Rustici Software, LLC
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the <organization> nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL Rustici Software, LLC BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using RusticiSoftware.HostedEngine.Client;
+using System.Text;
+
+namespace HostedDemoApp
+{
+    public partial class InvitationInfoSample : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            String invid = Request["invid"];
+
+
+            invitationJobStatus.InnerHtml = "<div>Job Status: <strong>" + ScormCloud.InvitationService.GetInvitationStatus(invid) + "</strong></div>";
+            
+            InvitationInfo invitationinfo = ScormCloud.InvitationService.GetInvitationInfo(invid, true);
+
+            StringBuilder ct = new StringBuilder();
+
+            
+
+            ct.AppendLine("<div>Invitation ID: " + invitationinfo.Id + "</div>");
+            ct.AppendLine("<div>Invitation Course ID: " + invitationinfo.CourseId + "</div>");
+            ct.AppendLine("<div>Invitation is public: " + invitationinfo.Public.ToString() + "</div>");
+            ct.AppendLine("<div>Invitation is launchable: " + invitationinfo.AllowLaunch.ToString() + "</div>");
+            if (invitationinfo.Public)
+            {
+                ct.AppendLine("<div>Invitation is open (for new registations): " + invitationinfo.AllowNewRegistrations.ToString() + "</div>");
+                ct.AppendLine("<div>Invitation Public URL: " + invitationinfo.Url + "</div>");
+            }
+            ct.AppendLine("<div style='margin:15px;background-color:#DEDEDE;'>");
+            ct.AppendLine("<div>Invitation Subject: " + invitationinfo.Subject + "</div>");
+            ct.AppendLine("<div>Invitation Message: " + invitationinfo.Message + "</div>");
+            ct.AppendLine("</div>");
+            if (invitationinfo.UserInvitations.Length > 0)
+            {
+                ct.AppendLine("<div><h2>User Invitations</h2>");
+                foreach (UserInvitationStatus ui in invitationinfo.UserInvitations)
+                {
+                    ct.AppendLine("<div style='border-bottom:1px dotted;'>");
+                    ct.AppendLine("<div>Recipient Email: <strong>" + ui.Email + "</strong></div>");
+                    ct.AppendLine("<div>Recipient Registration Id: " + ui.RegistrationId + "</div>");
+                    ct.AppendLine("<div>Recipient Launch Url: " + ui.Url + "</div>");
+                    ct.AppendLine("<div>Recipient Started: " + ui.IsStarted.ToString() + "</div>");
+                    if (ui.IsStarted) 
+                    {
+                        ct.AppendLine("<div style='margin:15px;background-color:#DEDEDE;'>");
+                        ct.AppendLine("<div>Completion: " + ui.RegSummary.Complete + "</div>");
+                        ct.AppendLine("<div>Success: " + ui.RegSummary.Success + "</div>");
+                        ct.AppendLine("<div>Score: " + ui.RegSummary.Score + "</div>");
+                        ct.AppendLine("<div>Total Time: " + ui.RegSummary.TotalTime + "</div>");
+                        ct.AppendLine("</div>");
+                    }
+                    ct.AppendLine("</div>");
+                    
+
+                }
+                ct.AppendLine("</div>");
+            }
+
+            invitationsInfoDiv.InnerHtml = ct.ToString();
+
+
+
+        }
+    }
+}
