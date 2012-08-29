@@ -48,16 +48,13 @@ namespace HostedDemoApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            importForm.CourseId = Guid.NewGuid().ToString();
-            importForm.Success += new EventHandler(importForm_Success);
+            String courseId = Guid.NewGuid().ToString();
+            String redirectUrl = Utils.GetSiteName() + "/CloudCourseList.aspx";
+
+            this.importCourseForm.Action = ScormCloud.CourseService.GetImportCourseUrl(courseId, redirectUrl);
+
         }
 
-        void importForm_Success(object sender, EventArgs e)
-        {
-            String learningId = importForm.UploadedCourseId;
-            String title = importForm.ImportResults[0].Title;
-            DataStore.AddEmptyLearningRecord(learningId);
-            Response.Redirect(ResolveUrl("~/SendLearning.aspx?learningid=" + learningId + "&title=" + title));
-        }
+        
     }
 }
