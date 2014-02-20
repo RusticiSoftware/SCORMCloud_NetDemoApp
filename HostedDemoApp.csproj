@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjaxFunctions.aspx" />
+    <Content Include="CourseRegistrationList.aspx" />
     <Content Include="CourseInvitationsList.aspx" />
     <Content Include="CreateInvitationSample.aspx" />
     <Content Include="Global.asax" />
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="CloudCourseList.aspx.designer.cs">
       <DependentUpon>CloudCourseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseRegistrationList.aspx.cs">
+      <DependentUpon>CourseRegistrationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseRegistrationList.aspx.designer.cs">
+      <DependentUpon>CourseRegistrationList.aspx</DependentUpon>
     </Compile>
     <Compile Include="CourseInvitationsList.aspx.cs">
       <DependentUpon>CourseInvitationsList.aspx</DependentUpon>
@@ -235,6 +243,9 @@
       <Project>{11AF12EE-C99E-4A73-8BE2-1FC016867BC0}</Project>
       <Name>RusticiSoftware.HostedEngine.Client</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HostedEngineNetClient\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
